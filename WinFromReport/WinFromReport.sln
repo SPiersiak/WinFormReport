@@ -5,6 +5,10 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFromReport", "WinFromReport.csproj", "{705AA8B6-6A8D-4246-BA40-9BA07B3C0FB3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{856D2516-0555-412A-958A-2D05738E67C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportData", "..\ReportData\ReportData.csproj", "{ACFB3344-24D1-4081-B99C-7543298C2F63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{705AA8B6-6A8D-4246-BA40-9BA07B3C0FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{705AA8B6-6A8D-4246-BA40-9BA07B3C0FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{705AA8B6-6A8D-4246-BA40-9BA07B3C0FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFB3344-24D1-4081-B99C-7543298C2F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFB3344-24D1-4081-B99C-7543298C2F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFB3344-24D1-4081-B99C-7543298C2F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFB3344-24D1-4081-B99C-7543298C2F63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACFB3344-24D1-4081-B99C-7543298C2F63} = {856D2516-0555-412A-958A-2D05738E67C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE4771EF-DA1E-47D4-9340-3FA56D6B7AB4}
