@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+
 namespace WinFromReport;
 
 internal static class Program
@@ -11,6 +13,14 @@ internal static class Program
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        Application.Run(new MainForm());
+        var services = new ServiceCollection();
+
+        services.AppConfigureServices();
+
+        using (ServiceProvider serviceProvider = services.BuildServiceProvider())
+        {
+            var form1 = serviceProvider.GetRequiredService<MainForm>();
+            Application.Run(form1);
+        }
     }
 }
