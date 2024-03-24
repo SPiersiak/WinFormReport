@@ -38,7 +38,7 @@ public class ReportService : IReportService
         {
             Name = s.ReportName,
             Date = s.ReportDateTime.Date,
-            Time = s.ReportDateTime.TimeOfDay,
+            Time = s.ReportDateTime,
             User = s.User.UserName,
             Permises = s.Premises.PremisesName,
         }).Skip(skip).Take(100).ToList();

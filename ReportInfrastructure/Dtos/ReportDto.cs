@@ -10,7 +10,7 @@ public class ReportDto
     public DateTime Date { get; set; }
 
     [DisplayName("Godzina")]
-    public TimeSpan Time { get; set; }
+    public DateTime Time { get; set; }
 
     [DisplayName("Użytkownik")]
     public string User { get; set; }

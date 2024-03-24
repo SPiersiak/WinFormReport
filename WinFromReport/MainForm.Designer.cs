@@ -126,6 +126,8 @@ partial class MainForm
         // 
         // Data
         // 
+        Data.DisplayFormat.FormatString = "yyyy-MM-dd";
+        Data.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
         Data.FieldName = "Date";
         Data.Name = "Data";
         Data.OptionsColumn.AllowEdit = false;
@@ -137,6 +139,8 @@ partial class MainForm
         // 
         // Godzina
         // 
+        Godzina.DisplayFormat.FormatString = "HH:mm";
+        Godzina.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
         Godzina.FieldName = "Time";
         Godzina.Name = "Godzina";
         Godzina.OptionsColumn.AllowEdit = false;
