@@ -44,6 +44,9 @@ partial class MainForm
         Lokal = new GridColumn();
         premisesDropDown = new DevExpress.XtraEditors.LookUpEdit();
         premisesDtoBindingSource = new BindingSource(components);
+        paginationLabel = new DevExpress.XtraEditors.LabelControl();
+        previousPaginationButton = new DevExpress.XtraEditors.SimpleButton();
+        nextPagginationButton = new DevExpress.XtraEditors.SimpleButton();
         ((System.ComponentModel.ISupportInitialize)fromDateEdit.Properties).BeginInit();
         ((System.ComponentModel.ISupportInitialize)fromDateEdit.Properties.CalendarTimeProperties).BeginInit();
         ((System.ComponentModel.ISupportInitialize)toDateEdit.Properties).BeginInit();
@@ -57,7 +60,7 @@ partial class MainForm
         // 
         // confirmButton
         // 
-        confirmButton.Location = new Point(12, 393);
+        confirmButton.Location = new Point(12, 364);
         confirmButton.Name = "confirmButton";
         confirmButton.Size = new Size(140, 45);
         confirmButton.TabIndex = 0;
@@ -186,11 +189,48 @@ partial class MainForm
         // 
         premisesDtoBindingSource.DataSource = typeof(ReportInfrastructure.Dtos.PremisesDto);
         // 
+        // paginationLabel
+        // 
+        paginationLabel.Location = new Point(87, 420);
+        paginationLabel.Name = "paginationLabel";
+        paginationLabel.Size = new Size(23, 13);
+        paginationLabel.TabIndex = 5;
+        paginationLabel.Text = "1 z 1";
+        paginationLabel.Visible = false;
+        // 
+        // previousPaginationButton
+        // 
+        previousPaginationButton.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+        previousPaginationButton.Appearance.Options.UseFont = true;
+        previousPaginationButton.Enabled = false;
+        previousPaginationButton.Location = new Point(12, 415);
+        previousPaginationButton.Name = "previousPaginationButton";
+        previousPaginationButton.Size = new Size(69, 23);
+        previousPaginationButton.TabIndex = 6;
+        previousPaginationButton.Text = "Poprzednia";
+        previousPaginationButton.Visible = false;
+        previousPaginationButton.Click += PreviousPagginationButtonOnClick;
+        // 
+        // nextPagginationButton
+        // 
+        nextPagginationButton.Appearance.Font = new Font("Tahoma", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+        nextPagginationButton.Appearance.Options.UseFont = true;
+        nextPagginationButton.Location = new Point(125, 415);
+        nextPagginationButton.Name = "nextPagginationButton";
+        nextPagginationButton.Size = new Size(63, 23);
+        nextPagginationButton.TabIndex = 7;
+        nextPagginationButton.Text = "Następna";
+        nextPagginationButton.Visible = false;
+        nextPagginationButton.Click += NextPagginationButtonOnClick;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(nextPagginationButton);
+        Controls.Add(previousPaginationButton);
+        Controls.Add(paginationLabel);
         Controls.Add(premisesDropDown);
         Controls.Add(reportGrid);
         Controls.Add(toDateEdit);
@@ -209,6 +249,7 @@ partial class MainForm
         ((System.ComponentModel.ISupportInitialize)premisesDropDown.Properties).EndInit();
         ((System.ComponentModel.ISupportInitialize)premisesDtoBindingSource).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
@@ -231,4 +272,7 @@ partial class MainForm
     private DevExpress.XtraGrid.Columns.GridColumn Lokal;
     private DevExpress.XtraEditors.LookUpEdit premisesDropDown;
     private BindingSource premisesDtoBindingSource;
+    private DevExpress.XtraEditors.LabelControl paginationLabel;
+    private DevExpress.XtraEditors.SimpleButton previousPaginationButton;
+    private DevExpress.XtraEditors.SimpleButton nextPagginationButton;
 }

@@ -13,7 +13,7 @@ public class ReportService : IReportService
         _contextFactory = contextFactory;
     }
 
-    public List<ReportDto> GetReports(DateTime? dateFrom, DateTime? dateTo, long? premises)
+    public (List<ReportDto>, int) GetReports(DateTime? dateFrom, DateTime? dateTo, long? premises, int page)
     {
         using var context = _contextFactory.CreateDbContext();
 
@@ -27,16 +27,22 @@ public class ReportService : IReportService
         {
             query = query.Where(x => x.PremisesId == premises.Value);
         }
+        var totalItems = query.Count();
+        var totalPage = ((totalItems - 1) / 100) + 1;
 
-        var result = query.Select(s => new ReportDto()
+        var skip = (page - 1) * 100;
+
+        var result = query
+            .AsNoTracking()
+            .Select(s => new ReportDto()
         {
             Name = s.ReportName,
             Date = s.ReportDateTime.Date,
             Time = s.ReportDateTime.TimeOfDay,
             User = s.User.UserName,
             Permises = s.Premises.PremisesName,
-        }).Take(100).ToList();
+        }).Skip(skip).Take(100).ToList();
 
-        return result;
+        return (result, totalPage);
     }
 }

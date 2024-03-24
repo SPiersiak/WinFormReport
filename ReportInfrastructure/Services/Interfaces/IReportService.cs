@@ -3,5 +3,5 @@
 namespace ReportInfrastructure.Services.Interfaces;
 public interface IReportService
 {
-    List<ReportDto> GetReports(DateTime? dateFrom, DateTime? dateTo, long? premises);
+    (List<ReportDto>, int) GetReports(DateTime? dateFrom, DateTime? dateTo, long? premises, int page);
 }
