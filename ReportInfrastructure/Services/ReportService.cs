@@ -18,7 +18,7 @@ public class ReportService : IReportService
         using var context = _contextFactory.CreateDbContext();
 
         var query = context.Reports
-            .Where(x => x.ReportDateTime.Date >= (dateFrom ?? DateTime.MinValue.Date) && x.ReportDateTime <= (dateTo ?? DateTime.MaxValue.Date))
+            .Where(x => x.ReportDateTime.Date >= (dateFrom ?? DateTime.MinValue.Date) && x.ReportDateTime.Date <= (dateTo ?? DateTime.MaxValue.Date))
             .Include(i => i.User)
             .Include(i => i.Premises)
             .AsQueryable();

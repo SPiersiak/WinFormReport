@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ReportInfrastructure.Dtos;
 
 namespace ReportInfrastructure.Services.Interfaces;
 public interface IPremisesService
 {
+    public List<PremisesDto> GetPremises();
 }
